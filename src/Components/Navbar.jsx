@@ -1,6 +1,7 @@
-console.log("ENV TEST:", import.meta.env.VITE_IMAGEKIT_URL_ENDPOINT);
+// console.log("ENV TEST:", import.meta.env.VITE_IMAGEKIT_URL_ENDPOINT);
 import React, { useState } from 'react'
 import { IKImage } from "imagekitio-react";
+import Image from './Image';
 
 
 
@@ -12,7 +13,11 @@ const Navbar = () => {
     <div className='w-full h-16 md:h-20 flex items-center justify-between'>
         {/* LOGO */}
         <div className='flex items-center gap-3 text-2xl font-bold'>
-            <IKImage path="blog_logo.png" className='w-8 h-8' alt="" />
+              {/* ImageKit */}
+            {/* <Image src="blog_logo.png" alt="blog_logo.png"  /> */}
+            <IKImage urlEndpoint={import.meta.env.VITE_IMAGEKIT_URL_ENDPOINT} src="https://ik.imagekit.io/8b15zl0rj/blog_logo.png" className='w-8 h-8' alt="Ray Blog" w={32} h={32}
+            />
+
             <span>Ray Blog</span>
         </div>
 
