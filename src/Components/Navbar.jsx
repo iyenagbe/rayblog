@@ -24,7 +24,7 @@ const Navbar = () => {
 
         {/* MOBILE button */}
         <div className='md:hidden'>
-            <div className='cursor-pointer text-2xl' onClick={() => setOpen(prev => ! prev)}>{open ? "x" : "="}
+            <div className='cursor-pointer text-2xl' onClick={() => setOpen(prev => ! prev)}>{open ? "x" : "☰"}
 
             </div>
                 {/* Mobile link */}
@@ -37,7 +37,7 @@ const Navbar = () => {
             <Link to="/">Most Popular</Link>
             <Link to="/">About</Link>
             <Link to="/">
-                <button className='py-1 px-5 rounded-2xl bg-blue-700 text-white'>Login</button>
+                <button className='py-1 px-5 rounded-2xl bg-blue-700 text-white cursor-pointer'>Login</button>
             </Link>
                 </div>
         </div>
@@ -49,7 +49,7 @@ const Navbar = () => {
             <Link to="/">Most Popular</Link>
             <Link to="/">About</Link>
             <Link to="/">
-                <button className='py-1 px-5 rounded-2xl bg-blue-700 text-white'>Login</button>
+                <button className='py-1 px-5 rounded-2xl bg-blue-700 text-white cursor-pointer'>Login</button>
             </Link>
         </div>
       
