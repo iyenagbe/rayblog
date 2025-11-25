@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { IKImage } from "imagekitio-react";
 import Image from './Image';
 import { Link } from 'react-router-dom';
+import { SignedIn, SignedOut, UserButton, SignInButton } from '@clerk/clerk-react';
 
 
 
@@ -32,10 +33,10 @@ const Navbar = () => {
                 className={`w-full flex h-screen flex-col items-center justify-center gap-8 font-medium text-lg absolute top-16 transition-all ease-in-out 
                     ${open ? "-right-0" : "-right-[100%]"}`}
                 >
-            <Link to="/">Home</Link>
-            <Link to="/">Trending</Link>
-            <Link to="/">Most Popular</Link>
-            <Link to="/">About</Link>
+            <Link to="/Home">Home</Link>
+            <Link to="/Trending">Trending</Link>
+            <Link to="/Most Popular">Most Popular</Link>
+            <Link to="/About">About</Link>
             <Link to="/">
                 <button className='py-1 px-5 rounded-2xl bg-blue-700 text-white cursor-pointer'>Login</button>
             </Link>
@@ -44,13 +45,20 @@ const Navbar = () => {
 
         {/* DESKTOP MENU*/}
         <div className='hidden md:flex items-center gap-8 xl:gap-12 font-medium'>
-            <Link to="/">Home</Link>
-            <Link to="/">Trending</Link>
-            <Link to="/">Most Popular</Link>
-            <Link to="/">About</Link>
-            <Link to="/">
+            <Link to="/Home">Home</Link>
+            <Link to="/Trending">Trending</Link>
+            <Link to="/Most Popular">Most Popular</Link>
+            <Link to="/About">About</Link>
+            <SignedOut >
+            <Link to="/Login">
                 <button className='py-1 px-5 rounded-2xl bg-blue-700 text-white cursor-pointer'>Login</button>
             </Link>
+
+            </SignedOut >
+            <SignedIn >
+                <UserButton />
+            </SignedIn >
+
         </div>
       
     </div>
